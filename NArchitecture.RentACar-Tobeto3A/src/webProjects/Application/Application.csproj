@@ -14,7 +14,6 @@
 
   <ItemGroup>
     <Folder Include="Features\Brands\Commands\Update\" />
-    <Folder Include="Features\Brands\Dtos\" />
     <Folder Include="Features\Brands\Queries\GetAll\" />
     <Folder Include="Features\Brands\Queries\GetById\" />
     <Folder Include="Features\Brands\Rules\" />
