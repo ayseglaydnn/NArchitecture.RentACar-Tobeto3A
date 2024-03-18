@@ -21,9 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "src\webProje
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Persistence", "src\corePackages\Core.Persistence\Core.Persistence.csproj", "{A8F44908-9F4C-4562-9AD7-AD7AA904A890}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.CrossCuttingConcers", "src\corePackages\Core.CrossCuttingConcers\Core.CrossCuttingConcers.csproj", "{A2A7720A-3071-4BB1-8D3A-4EF316556B02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.CrossCuttingConcers", "src\corePackages\Core.CrossCuttingConcers\Core.CrossCuttingConcers.csproj", "{A2A7720A-3071-4BB1-8D3A-4EF316556B02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Application", "src\corePackages\Core.Application\Core.Application.csproj", "{07C28226-A8E0-410A-830B-E105DDC885A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Application", "src\corePackages\Core.Application\Core.Application.csproj", "{07C28226-A8E0-410A-830B-E105DDC885A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

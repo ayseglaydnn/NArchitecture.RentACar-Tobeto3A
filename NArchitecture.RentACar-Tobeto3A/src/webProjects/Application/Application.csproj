@@ -19,15 +19,9 @@
     <Folder Include="Features\Brands\Rules\" />
     <Folder Include="Features\Cars\Commands\" />
     <Folder Include="Features\Cars\Constants\" />
-    <Folder Include="Features\Cars\Dtos\" />
-    <Folder Include="Features\Cars\Profiles\" />
-    <Folder Include="Features\Cars\Queries\" />
     <Folder Include="Features\Cars\Rules\" />
     <Folder Include="Features\Models\Commands\" />
     <Folder Include="Features\Models\Constants\" />
-    <Folder Include="Features\Models\Dtos\" />
-    <Folder Include="Features\Models\Profiles\" />
-    <Folder Include="Features\Models\Queries\" />
     <Folder Include="Features\Models\Rules\" />
   </ItemGroup>
 

@@ -14,6 +14,8 @@ public static class PersistenceServiceRegistration
         services.AddDbContext<BaseDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("TobetoNet3ANArchitecture")));
 
         services.AddScoped<IBrandRepository, BrandRepository>();
+        services.AddScoped<ICarRepository, CarRepository>();
+        services.AddScoped<IModelRepository, ModelRepository>();
 
         return services;
     }
