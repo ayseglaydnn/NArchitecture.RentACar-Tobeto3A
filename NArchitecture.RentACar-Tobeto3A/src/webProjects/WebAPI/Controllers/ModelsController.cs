@@ -1,4 +1,5 @@
-﻿using Application.Features.Models.Queries.GetListDynamic;
+﻿using Application.Features.Models.Commands.SoftDelete;
+using Application.Features.Models.Queries.GetListDynamic;
 using Application.Features.Models.Queries.GetListPagination;
 using Core.Application.Requests;
 using Core.Persistence.Dynamic;
@@ -8,6 +9,13 @@ namespace WebAPI.Controllers;
 
 public class ModelsController : BaseController
 {
+
+    [HttpDelete("SoftDelete/{id}")]
+    public async Task<IActionResult> SoftDelete([FromBody] SoftDeleteModelCommand command)
+    {
+        return Ok(await Mediator.Send(command));
+    }
+
     [HttpGet("pagination")]
     public async Task<IActionResult> GetListPagination([FromQuery] PageRequest pageRequest)
     {

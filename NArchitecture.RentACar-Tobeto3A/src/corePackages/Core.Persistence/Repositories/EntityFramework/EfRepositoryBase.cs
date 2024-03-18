@@ -35,6 +35,15 @@ public class EfRepositoryBase<TEntity, TEntityId, TContext> : IRepository<TEntit
         return entity;
     }
 
+    public TEntity SoftDelete(TEntity entity)
+    {
+        entity.IsDeleted = true;
+        entity.DeletedDate = DateTime.UtcNow;
+        Context.Update(entity);
+        Context.SaveChanges();
+        return entity;
+    }
+
     public TEntity Get(Expression<Func<TEntity, bool>> predicate,
         Func<IQueryable<TEntity>, IIncludableQueryable<TEntity, object>> include = null)
     {
@@ -74,6 +83,14 @@ public class EfRepositoryBase<TEntity, TEntityId, TContext> : IRepository<TEntit
     {
         entity.DeletedDate = DateTime.UtcNow;
         Context.Remove(entity);
+        await Context.SaveChangesAsync();
+        return entity;
+    }
+    public async Task<TEntity> SoftDeleteAsync(TEntity entity)
+    {
+        entity.IsDeleted = true;
+        entity.DeletedDate = DateTime.UtcNow;
+        Context.Update(entity);
         await Context.SaveChangesAsync();
         return entity;
     }

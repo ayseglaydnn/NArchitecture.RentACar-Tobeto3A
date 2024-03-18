@@ -1,4 +1,5 @@
-﻿using Application.Features.Cars.Queries.GetListDynamic;
+﻿using Application.Features.Cars.Commands.SoftDelete;
+using Application.Features.Cars.Queries.GetListDynamic;
 using Application.Features.Cars.Queries.GetListPagination;
 using Core.Application.Requests;
 using Core.Persistence.Dynamic;
@@ -8,7 +9,14 @@ namespace WebAPI.Controllers;
 
 public class CarsController : BaseController
 {
-    [HttpGet("pagination")]
+
+    [HttpDelete("SoftDelete/{id}")]
+    public async Task<IActionResult> SoftDelete([FromBody] SoftDeleteCarCommand command)
+    {
+        return Ok(await Mediator.Send(command));
+    }
+
+    [HttpGet("Pagination")]
     public async Task<IActionResult> GetListPagination([FromQuery] PageRequest pageRequest)
     {
         GetListByPaginationCarQuery query = new() { PageRequest = pageRequest };
@@ -16,7 +24,7 @@ public class CarsController : BaseController
         return Ok(result);
     }
 
-    [HttpPost("dynamic")]
+    [HttpPost("Dynamic")]
     public async Task<IActionResult> GetListDynamic([FromQuery] PageRequest pageRequest, [FromBody] Dynamic dynamic)
     {
         GetListByDynamicCarQuery dynamicQuery = new() { PageRequest = pageRequest, Dynamic = dynamic };

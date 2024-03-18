@@ -14,4 +14,5 @@ public interface IRepository<TEntity, TEntityId> : IQuery<TEntity>
     TEntity Add(TEntity entity);
     TEntity Update(TEntity entity);
     TEntity Delete(TEntity entity);
+    TEntity SoftDelete(TEntity entity);
 }

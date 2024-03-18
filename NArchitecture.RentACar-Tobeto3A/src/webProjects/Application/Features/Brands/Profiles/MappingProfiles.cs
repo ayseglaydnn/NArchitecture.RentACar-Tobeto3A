@@ -1,5 +1,6 @@
 ﻿using Application.Features.Brands.Commands.Create;
 using Application.Features.Brands.Commands.Delete;
+using Application.Features.Brands.Commands.SoftDelete;
 using Application.Features.Brands.Dtos;
 using Application.Features.Brands.Models;
 using AutoMapper;
@@ -17,6 +18,8 @@ public class MappingProfiles : Profile
         CreateMap<Brand, CreatedBrandResponse>().ReverseMap();
         
         CreateMap<Brand, DeleteBrandResponse>().ReverseMap();
+
+        CreateMap<Brand, SoftDeleteBrandResponse>().ReverseMap();
 
         CreateMap<Brand, GetListBrandResponse>().ReverseMap();
         CreateMap<IPaginate<Brand>, BrandListModel>().ReverseMap();

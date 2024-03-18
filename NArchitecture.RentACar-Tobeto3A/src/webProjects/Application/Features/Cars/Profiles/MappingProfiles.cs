@@ -1,4 +1,5 @@
-﻿using Application.Features.Cars.Dtos;
+﻿using Application.Features.Cars.Commands.SoftDelete;
+using Application.Features.Cars.Dtos;
 using AutoMapper;
 using Core.Application.Responses;
 using Core.Persistence.Paging;
@@ -11,6 +12,8 @@ public class MappingProfiles : Profile
 {
     public MappingProfiles()
     {
+
+        CreateMap<Car, SoftDeleteCarResponse>().ReverseMap();
 
         CreateMap<Car, GetListCarResponse>()
             .ForMember(destinationMember: c => c.ModelName, memberOptions: opt => opt.MapFrom(c => c.Model.Name))

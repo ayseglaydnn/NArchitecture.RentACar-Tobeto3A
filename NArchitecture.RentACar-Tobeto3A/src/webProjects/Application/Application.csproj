@@ -17,10 +17,8 @@
     <Folder Include="Features\Brands\Queries\GetAll\" />
     <Folder Include="Features\Brands\Queries\GetById\" />
     <Folder Include="Features\Brands\Rules\" />
-    <Folder Include="Features\Cars\Commands\" />
     <Folder Include="Features\Cars\Constants\" />
     <Folder Include="Features\Cars\Rules\" />
-    <Folder Include="Features\Models\Commands\" />
     <Folder Include="Features\Models\Constants\" />
     <Folder Include="Features\Models\Rules\" />
   </ItemGroup>

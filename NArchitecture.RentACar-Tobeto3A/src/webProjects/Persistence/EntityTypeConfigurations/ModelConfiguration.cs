@@ -15,6 +15,7 @@ public class ModelConfiguration : IEntityTypeConfiguration<Model>
         builder.Property(x => x.CreatedDate).HasColumnName("CreatedDate");
         builder.Property(x => x.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(x => x.DeletedDate).HasColumnName("DeletedDate");
+        builder.Property(x => x.IsDeleted).HasColumnName("IsDeleted");
 
         builder.HasOne(x => x.Brand);
         builder.HasMany(x => x.Cars);
