@@ -1,15 +1,13 @@
 ﻿using Application.Features.Models.Dtos;
 using Core.Application.Pipelines.Caching;
-using Core.Application.Requests;
 using Core.Application.Responses;
+using Core.CrossCuttingConcers.Utilities.Results;
 using MediatR;
 
-namespace Application.Features.Models.Queries.GetListPagination;
+namespace Application.Features.Models.Queries.GetAll;
 
-public class GetListByPaginationModelQuery : IRequest<GetListResponse<GetModelResponse>>, ICachableRequest
+public class GetAllModelQuery : IRequest<List<GetModelResponse>>, ICachableRequest
 {
-    public PageRequest PageRequest { get; set; }
-
     public bool BypassCache { get; }
 
     public string CacheKey => "model-list";

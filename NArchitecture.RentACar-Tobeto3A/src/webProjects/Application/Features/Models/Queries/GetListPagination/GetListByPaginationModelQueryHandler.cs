@@ -9,7 +9,7 @@ using MediatR;
 
 namespace Application.Features.Models.Queries.GetListPagination;
 
-public class GetListByPaginationModelQueryHandler : IRequestHandler<GetListByPaginationModelQuery, GetListResponse<GetListModelResponse>>
+public class GetListByPaginationModelQueryHandler : IRequestHandler<GetListByPaginationModelQuery, GetListResponse<GetModelResponse>>
 {
     private readonly IModelRepository _modelRepository;
     private readonly IMapper _mapper;
@@ -20,12 +20,12 @@ public class GetListByPaginationModelQueryHandler : IRequestHandler<GetListByPag
         _mapper = mapper;
     }
 
-    public async Task<GetListResponse<GetListModelResponse>> Handle(GetListByPaginationModelQuery request, CancellationToken cancellationToken)
+    public async Task<GetListResponse<GetModelResponse>> Handle(GetListByPaginationModelQuery request, CancellationToken cancellationToken)
     {
         IPaginate<Model> models = await _modelRepository.GetListPaginateAsync
             (index: request.PageRequest.Page, size: request.PageRequest.PageSize);
 
-        var paginatedModelListModel = _mapper.Map<GetListResponse<GetListModelResponse>>(models);
+        var paginatedModelListModel = _mapper.Map<GetListResponse<GetModelResponse>>(models);
 
         return paginatedModelListModel;
     }

@@ -1,10 +1,9 @@
 ﻿
 namespace Application.Features.Cars.Dtos;
 
-public class GetListCarResponse
+public class GetCarResponse
 {
     public Guid Id { get; set; }
-    public string Name { get; set; }
     public string BrandName { get; set; }
     public string ModelName { get; set; }
     public int ModelYear { get; set; }

@@ -8,7 +8,7 @@ using MediatR;
 
 namespace Application.Features.Cars.Queries.GetListPagination;
 
-public class GetListByPaginationCarQueryHandler : IRequestHandler<GetListByPaginationCarQuery, GetListResponse<GetListCarResponse>>
+public class GetListByPaginationCarQueryHandler : IRequestHandler<GetListByPaginationCarQuery, GetListResponse<GetCarResponse>>
 {
     private readonly ICarRepository _carRepository;
     private readonly IMapper _mapper;
@@ -19,12 +19,12 @@ public class GetListByPaginationCarQueryHandler : IRequestHandler<GetListByPagin
         _mapper = mapper;
     }
 
-    public async Task<GetListResponse<GetListCarResponse>> Handle(GetListByPaginationCarQuery request, CancellationToken cancellationToken)
+    public async Task<GetListResponse<GetCarResponse>> Handle(GetListByPaginationCarQuery request, CancellationToken cancellationToken)
     {
         IPaginate<Car> cars = await _carRepository.GetListPaginateAsync
             (index: request.PageRequest.Page, size: request.PageRequest.PageSize);
 
-        var paginatedCarListModel = _mapper.Map<GetListResponse<GetListCarResponse>>(cars);
+        var paginatedCarListModel = _mapper.Map<GetListResponse<GetCarResponse>>(cars);
 
         return paginatedCarListModel;
     }

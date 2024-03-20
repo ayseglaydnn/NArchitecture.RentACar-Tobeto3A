@@ -6,7 +6,7 @@ using MediatR;
 
 namespace Application.Features.Cars.Queries.GetListDynamic;
 
-public class GetListByDynamicCarQuery : IRequest<GetListResponse<GetListCarResponse>>
+public class GetListByDynamicCarQuery : IRequest<GetListResponse<GetCarResponse>>
 {
     public PageRequest PageRequest { get; set; }
     public Dynamic Dynamic { get; set; }

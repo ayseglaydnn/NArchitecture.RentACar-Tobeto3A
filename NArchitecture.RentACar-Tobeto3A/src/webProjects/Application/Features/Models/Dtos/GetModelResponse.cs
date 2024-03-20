@@ -1,7 +1,6 @@
-﻿
-namespace Application.Features.Models.Dtos;
+﻿namespace Application.Features.Models.Dtos;
 
-public class GetListModelResponse
+public class GetModelResponse
 {
     public Guid Id { get; set; }
     public string Name { get; set; }

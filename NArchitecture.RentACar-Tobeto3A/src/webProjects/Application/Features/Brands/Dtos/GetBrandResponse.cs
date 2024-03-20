@@ -1,6 +1,6 @@
 ﻿namespace Application.Features.Brands.Dtos;
 
-public class GetListBrandResponse
+public class GetBrandResponse
 {
     public Guid Id { get; set; }
     public string Name { get; set; }

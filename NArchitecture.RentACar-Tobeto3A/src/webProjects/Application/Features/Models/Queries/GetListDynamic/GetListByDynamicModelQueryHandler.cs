@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Application.Features.Models.Queries.GetListDynamic;
 
-public class GetListByDynamicModelQueryHandler : IRequestHandler<GetListByDynamicModelQuery, GetListResponse<GetListModelResponse>>
+public class GetListByDynamicModelQueryHandler : IRequestHandler<GetListByDynamicModelQuery, GetListResponse<GetModelResponse>>
 {
     private readonly IModelRepository _modelRepository;
     private readonly IMapper _mapper;
@@ -20,7 +20,7 @@ public class GetListByDynamicModelQueryHandler : IRequestHandler<GetListByDynami
         _mapper = mapper;
     }
 
-    public async Task<GetListResponse<GetListModelResponse>> Handle(GetListByDynamicModelQuery request, 
+    public async Task<GetListResponse<GetModelResponse>> Handle(GetListByDynamicModelQuery request, 
         CancellationToken cancellationToken)
     {
         IPaginate<Model> models = await _modelRepository.GetListByDynamicAsync(request.Dynamic,
@@ -28,7 +28,7 @@ public class GetListByDynamicModelQueryHandler : IRequestHandler<GetListByDynami
             index: request.PageRequest.Page,
             size: request.PageRequest.PageSize);
 
-        var mappedModelListModel = _mapper.Map<GetListResponse<GetListModelResponse>>(models);
+        var mappedModelListModel = _mapper.Map<GetListResponse<GetModelResponse>>(models);
 
         return mappedModelListModel;
     }

@@ -6,7 +6,7 @@ using MediatR;
 
 namespace Application.Features.Models.Queries.GetListDynamic;
 
-public class GetListByDynamicModelQuery:IRequest<GetListResponse<GetListModelResponse>>
+public class GetListByDynamicModelQuery:IRequest<GetListResponse<GetModelResponse>>
 {
     public PageRequest PageRequest { get; set; }
     public Dynamic Dynamic { get; set; }
