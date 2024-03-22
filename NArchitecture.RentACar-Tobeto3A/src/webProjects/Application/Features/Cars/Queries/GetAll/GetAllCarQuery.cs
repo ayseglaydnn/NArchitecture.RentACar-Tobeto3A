@@ -6,9 +6,9 @@ using MediatR;
 
 namespace Application.Features.Cars.Queries.GetAll;
 
-public class GetAllCarQuery : IRequest<List<GetCarResponse>>, ICachableRequest
+public class GetAllCarQuery : IRequest<List<GetCarResponse>>//, ICachableRequest
 {
-    public bool BypassCache { get; }
-    public string CacheKey => "car-list";
-    public TimeSpan? SlidingExpiration { get; }
+    //public bool BypassCache { get; }
+    //public string CacheKey => "car-list";
+    //public TimeSpan? SlidingExpiration { get; }
 }

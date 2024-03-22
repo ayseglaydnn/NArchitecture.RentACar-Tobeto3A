@@ -22,5 +22,6 @@ public class CarConfiguration : IEntityTypeConfiguration<Car>
 
 
         builder.HasOne(x => x.Model);
+        builder.HasMany(x => x.CarImages);
     }
 }

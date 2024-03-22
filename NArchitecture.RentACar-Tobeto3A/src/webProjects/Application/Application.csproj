@@ -9,11 +9,20 @@
   <ItemGroup>
     <ProjectReference Include="..\..\corePackages\Core.Application\Core.Application.csproj" />
     <ProjectReference Include="..\..\corePackages\Core.CrossCuttingConcers\Core.CrossCuttingConcers.csproj" />
+    <ProjectReference Include="..\..\corePackages\Core.Security\Core.Security.csproj" />
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Features\Brands\Rules\" />
+    <Folder Include="Features\CarImage\Command\Add\" />
+    <Folder Include="Features\CarImage\Command\Delete\" />
+    <Folder Include="Features\CarImage\Command\" />
+    <Folder Include="Features\CarImage\Command\Update\" />
+    <Folder Include="Features\CarImage\Profiles\" />
+    <Folder Include="Features\CarImage\Query\GelAll\" />
+    <Folder Include="Features\CarImage\Query\GetById\" />
+    <Folder Include="Features\CarImage\Query\GetByCarId\" />
     <Folder Include="Features\Cars\Constants\" />
     <Folder Include="Features\Cars\Rules\" />
     <Folder Include="Features\Models\Constants\" />
@@ -25,6 +34,7 @@
     <PackageReference Include="FluentValidation" Version="11.9.0" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.9.0" />
     <PackageReference Include="MediatR" Version="12.2.0" />
+    <PackageReference Include="MediatR.Contracts" Version="2.0.1" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
   </ItemGroup>

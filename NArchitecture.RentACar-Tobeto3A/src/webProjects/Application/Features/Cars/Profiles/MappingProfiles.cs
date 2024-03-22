@@ -25,9 +25,10 @@ public class MappingProfiles : Profile
         CreateMap<Car, UpdateCarCommand>().ReverseMap();
         CreateMap<Car, UpdateCarResponse>().ReverseMap();
 
-        CreateMap<Car, GetCarResponse>()
-            .ForMember(destinationMember: c => c.ModelName, memberOptions: opt => opt.MapFrom(c => c.Model.Name))
-            .ForMember(destinationMember: c => c.BrandName, memberOptions: opt => opt.MapFrom(c => c.Model.Brand.Name));
+        CreateMap<Car, GetCarResponse>().ReverseMap();
+        //CreateMap<Car, GetCarResponse>()
+        //    .ForMember(destinationMember: c => c.ModelName, memberOptions: opt => opt.MapFrom(c => c.Model.Name))
+        //    .ForMember(destinationMember: c => c.BrandName, memberOptions: opt => opt.MapFrom(c => c.Model.Brand.Name));
         CreateMap<IPaginate<Car>, GetListResponse<GetCarResponse>>().ReverseMap();
 
         CreateMap<List<Car>, List<GetCarResponse>>().ReverseMap();

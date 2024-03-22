@@ -7,7 +7,7 @@ public class Brand : BaseEntity<Guid>
     public string Name { get; set; }  //Audi 
 
 
-    public ICollection<Model> Models { get; set; }
+    public ICollection<Model>? Models { get; set; }
 
     public Brand()
     {

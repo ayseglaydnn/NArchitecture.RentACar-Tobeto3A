@@ -1,8 +1,6 @@
 ﻿using Application.Features.Models.Dtos;
 using Application.Services.Repositories;
 using AutoMapper;
-using Core.Application.Responses;
-using Core.CrossCuttingConcers.Utilities.Results;
 using Domain.Entities;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
